@@ -1,0 +1,22 @@
+STUDENTBNB PL - QUARTIERI E SUDDIVISIONI URBANE
+
+Snapshot: 2026-08-22
+Fonte: OpenStreetMap via Overpass API
+Licenza dati: Open Database License (ODbL) 1.0
+
+CRITERIO DI COMPLETEZZA
+All named administrative subdivisions at admin_level 8 or deeper, plus every mapped borough, suburb, quarter and neighbourhood inside each city boundary; duplicates removed by accent-insensitive name.
+
+Il termine 'quartiere' è usato nell'interfaccia come etichetta comune. Le denominazioni locali possono corrispondere a distretti, arrondissement, freguesias, Stadtteile, osiedla, borough, suburb, quarter o neighbourhood. Lo snapshot è incluso nel pacchetto e la build non dipende da servizi esterni.
+
+CONTEGGI
+- Warszawa: 445
+- Kraków: 308
+- Wrocław: 124
+- Gdańsk: 221
+- Poznań: 214
+- Łódź: 192
+- Lublin: 86
+- Katowice: 103
+
+Attribuzione dati: © OpenStreetMap contributors — https://www.openstreetmap.org/copyright

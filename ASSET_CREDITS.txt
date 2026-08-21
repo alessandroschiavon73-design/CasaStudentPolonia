@@ -1,0 +1,8 @@
+STUDENTBNB PL - CREDITI CARTOGRAFICI
+
+Cartina nazionale: https://commons.wikimedia.org/wiki/File:Poland_location_map.svg
+Autore: NordNordWest / Wikimedia Commons
+Licenza: CC BY-SA 3.0 / GFDL, secondo la pagina sorgente.
+Utilizzo nel portale: file country-map.svg visualizzato con indicatori HTML separati per le città universitarie.
+
+Le bandiere nazionali sono icone SVG geometriche realizzate per l'interfaccia StudentBnB.
