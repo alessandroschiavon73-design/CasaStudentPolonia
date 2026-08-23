@@ -1,1 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 861 837"><defs><clipPath id="country"><polygon points="155.0,117.2 275.5,58.6 413.3,92.1 508.0,58.6 671.6,125.6 757.7,234.4 740.5,376.7 809.3,460.4 749.1,577.5 662.9,661.2 551.0,703.1 456.3,770.0 318.6,736.6 215.3,669.6 137.8,585.9 103.3,460.4 155.0,359.9 94.7,242.7"/></clipPath><filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-opacity=".18"/></filter></defs><rect width="100%" height="100%" fill="#f7f4eb"/><g opacity=".35" stroke="#8bb2c5" stroke-width="1.7" fill="none"><path d="M34.4,150.7 q34.4,-16.7 68.9,0 t68.9,0"/><path d="M671.6,117.2 q34.4,-16.7 68.9,0 t68.9,0"/><path d="M706.0,652.9 q34.4,-16.7 68.9,0 t68.9,0"/></g><g clip-path="url(#country)" filter="url(#shadow)"><circle cx="241.1" cy="167.4" r="293.0" fill="#eadfbd" opacity=".96"/><circle cx="447.7" cy="150.7" r="293.0" fill="#d9e5c5" opacity=".96"/><circle cx="645.8" cy="234.4" r="293.0" fill="#e8c8b2" opacity=".96"/><circle cx="215.3" cy="376.7" r="293.0" fill="#cbd9e9" opacity=".96"/><circle cx="447.7" cy="401.8" r="293.0" fill="#e2d1e8" opacity=".96"/><circle cx="671.6" cy="460.4" r="293.0" fill="#f1df9c" opacity=".96"/><circle cx="301.4" cy="602.6" r="293.0" fill="#c9e1dc" opacity=".96"/><circle cx="585.5" cy="652.9" r="293.0" fill="#e5c6c6" opacity=".96"/></g><polygon points="155.0,117.2 275.5,58.6 413.3,92.1 508.0,58.6 671.6,125.6 757.7,234.4 740.5,376.7 809.3,460.4 749.1,577.5 662.9,661.2 551.0,703.1 456.3,770.0 318.6,736.6 215.3,669.6 137.8,585.9 103.3,460.4 155.0,359.9 94.7,242.7" fill="none" stroke="#9b968b" stroke-width="4" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900">
+<defs>
+  <filter id="paper"><feTurbulence baseFrequency=".012" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter>
+  <filter id="shadow"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-opacity=".18"/></filter>
+  <style>
+    .stroke{stroke:#4e4436;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+    .land{fill:#745f47}
+    .gold{fill:#c79c54}
+    .road{stroke:#fbf3e7;stroke-width:5;opacity:.68}
+    .sea{stroke:#a7c8d4;stroke-width:3;fill:none;opacity:.8}
+  </style>
+  <clipPath id="pl"><path d="M170 165L300 90l165 20 125-35 145 55 95 105 5 145 75 95-50 125 20 105-120 80-140 5-120 65-140-35-105 20-80-100-15-125-85-80 20-125-45-100 70-95z"/></clipPath>
+  <g id="townhall">
+    <rect x="-34" y="6" width="68" height="40" class="land stroke"/>
+    <path d="M-14 6V-12h28V6" class="land stroke"/>
+    <path d="M-2-12V-30" class="stroke" stroke="#745f47" fill="none"/>
+    <path d="M-16-12L0-34 16-12" class="land stroke"/>
+    <rect x="-6" y="19" width="12" height="27" fill="#8d7658" class="stroke"/>
+  </g>
+  <g id="towerblock">
+    <rect x="-18" y="-10" width="36" height="56" class="land stroke"/>
+    <path d="M0-34L-16-10h32z" class="land stroke"/>
+    <path d="M0-34V-48" class="stroke" stroke="#745f47" fill="none"/>
+    <rect x="-5" y="14" width="10" height="32" fill="#8d7658" class="stroke"/>
+  </g>
+  <g id="castle">
+    <rect x="-40" y="7" width="80" height="37" class="land stroke"/>
+    <rect x="-28" y="-6" width="16" height="13" class="land stroke"/>
+    <rect x="12" y="-6" width="16" height="13" class="land stroke"/>
+    <path d="M-28 -6l8-12 8 12M12 -6l8-12 8 12" class="land stroke"/>
+    <rect x="-6" y="18" width="12" height="26" fill="#8d7658" class="stroke"/>
+  </g>
+  <g id="gate">
+    <rect x="-44" y="8" width="88" height="38" class="land stroke"/>
+    <path d="M-30 8V-14h60V8" class="land stroke"/>
+    <path d="M-16-14L0-38 16-14" class="land stroke"/>
+    <rect x="-6" y="18" width="12" height="28" fill="#8d7658" class="stroke"/>
+  </g>
+  <g id="mine">
+    <path d="M-18 44V0L0-36 18 0v44" class="land stroke"/>
+    <path d="M-30 44h60" class="stroke" stroke="#745f47" fill="none"/>
+    <path d="M-18 0h36" class="stroke" stroke="#745f47" fill="none"/>
+    <circle cx="0" cy="-6" r="5" class="gold stroke"/>
+  </g>
+</defs>
+<rect width="1000" height="900" fill="#fbf8ef"/>
+<path d="M50 170q55-28 110 0t110 0" class="sea"/><path d="M740 110q55-28 110 0t110 0" class="sea"/><path d="M760 760q55-28 110 0t110 0" class="sea"/>
+<g clip-path="url(#pl)" filter="url(#paper)">
+  <rect x="70" y="55" width="840" height="780" fill="#e8dfbd"/>
+  <circle cx="250" cy="230" r="255" fill="#b8c8d8"/>
+  <circle cx="520" cy="210" r="245" fill="#cedcbc"/>
+  <circle cx="780" cy="300" r="245" fill="#e4c6b4"/>
+  <circle cx="310" cy="520" r="280" fill="#cec0d8"/>
+  <circle cx="605" cy="525" r="280" fill="#e1cf88"/>
+  <circle cx="780" cy="650" r="235" fill="#b8d0cc"/>
+  <circle cx="470" cy="735" r="245" fill="#d4b9bc"/>
+  <path d="M105 300L850 300" class="road"/><path d="M95 500L870 500" class="road"/><path d="M180 680L820 690" class="road"/><path d="M310 95L330 810" class="road"/><path d="M565 90L560 825" class="road"/><path d="M760 140L700 790" class="road"/>
+</g>
+<path d="M170 165L300 90l165 20 125-35 145 55 95 105 5 145 75 95-50 125 20 105-120 80-140 5-120 65-140-35-105 20-80-100-15-125-85-80 20-125-45-100 70-95z" fill="none" stroke="#92897a" stroke-width="6" stroke-linejoin="round" filter="url(#shadow)"/>
+<g filter="url(#shadow)">
+  <g transform="translate(526 145) scale(.86)"><use href="#gate"/></g>
+  <g transform="translate(286 375) scale(.82)"><use href="#townhall"/></g>
+  <g transform="translate(690 392) scale(.86)"><use href="#towerblock"/></g>
+  <g transform="translate(556 486) scale(.84)"><use href="#mine"/></g>
+  <g transform="translate(302 576) scale(.82)"><use href="#gate"/></g>
+  <g transform="translate(786 548) scale(.8)"><use href="#castle"/></g>
+  <g transform="translate(505 692) scale(.86)"><use href="#castle"/></g>
+  <g transform="translate(650 724) scale(.86)"><use href="#gate"/></g>
+</g>
+<g transform="translate(825 120)"><path d="M0 42C-28 13-24-27 0-40C24-27 28 13 0 42z" fill="#c99755" class="stroke"/><path d="M0-40v82" stroke="#7c603d" stroke-width="3"/><rect x="-8" y="42" width="16" height="11" fill="#c99755" class="stroke"/></g>
+<g transform="translate(145 735)"><path d="M-30 12h60l-8 8h-44z" fill="#c7a86b" class="stroke"/><path d="M0 12V-28l32 28z" fill="#e7dfcc" class="stroke"/></g>
+</svg>
