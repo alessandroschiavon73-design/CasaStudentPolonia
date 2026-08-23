@@ -1,104 +1,16 @@
 window.STUDENTBNB_CONFIG = {
-  "countryCode": "PL",
-  "countryName": "Polska",
-  "locale": "pl-PL",
-  "currency": "PLN",
-  "domain": "studentbnb.pl",
-  "apiBaseUrl": "/api/v1",
-  "apiEnabled": false,
-  "analyticsEnabled": false,
-  "routes": {
-    "city": "miasto.html",
-    "listing": "ogloszenie.html",
-    "publish": "dodaj-ogloszenie.html",
-    "request": "szukam.html",
-    "students": "studenci.html",
-    "solidarity": "mieszkanie-miedzypokoleniowe.html",
-    "privacy": "prywatnosc.html",
-    "confirm": "potwierdz-email.html"
-  },
-  "networkSites": [
-    {
-      "code": "IT",
-      "label": "Italia",
-      "flag": "🇮🇹",
-      "url": "https://studentbnb.it/"
-    },
-    {
-      "code": "ES",
-      "label": "España",
-      "flag": "🇪🇸",
-      "url": "https://studentbnb.es/"
-    },
-    {
-      "code": "PT",
-      "label": "Portugal",
-      "flag": "🇵🇹",
-      "url": "https://studentbnb.pt/"
-    },
-    {
-      "code": "FR",
-      "label": "France",
-      "flag": "🇫🇷",
-      "url": "https://studentbnb.fr/"
-    },
-    {
-      "code": "DE",
-      "label": "Deutschland",
-      "flag": "🇩🇪",
-      "url": "https://student-bnb.de/"
-    },
-    {
-      "code": "PL",
-      "label": "Polska",
-      "flag": "🇵🇱",
-      "url": "index.html"
-    }
+  brandLine: "Base & Belong",
+  countryCode: "PL", countryName: "Polska", locale: "pl-PL", currency: "PLN", domain: "studentbnb.pl",
+  apiBaseUrl: "/api/v1", apiEnabled: false, analyticsEnabled: false,
+  routes: { city:"miasto.html", listing:"ogloszenie.html", publish:"dodaj-ogloszenie.html", request:"szukam.html", students:"studenci.html", solidarity:"mieszkanie-miedzypokoleniowe.html", privacy:"prywatnosc.html", confirm:"potwierdz-email.html" },
+  networkSites: [
+    {code:"IT",label:"Italia",flag:"🇮🇹",url:"https://studentbnb.it/"},
+    {code:"ES",label:"España",flag:"🇪🇸",url:"https://studentbnb.es/"},
+    {code:"PT",label:"Portugal",flag:"🇵🇹",url:"https://studentbnb.pt/"},
+    {code:"FR",label:"France",flag:"🇫🇷",url:"https://studentbnb.fr/"},
+    {code:"DE",label:"Deutschland",flag:"🇩🇪",url:"https://student-bnb.de/"},
+    {code:"PL",label:"Polska",flag:"🇵🇱",url:"https://studentbnb.pl/"}
   ],
-  "ui": {
-    "select": "Wybierz",
-    "allCities": "Wszystkie miasta",
-    "allZones": "Wszystkie dzielnice",
-    "domainPending": "Domena niemiecka do ustalenia",
-    "checkEmail": "Sprawdź email, aby zakończyć weryfikację.",
-    "demoVerification": "Tryb demonstracyjny: użyj przycisku poniżej, aby zasymulować link otrzymany emailem.",
-    "genericError": "Nie udało się zakończyć operacji.",
-    "login": "Zaloguj się",
-    "verifiedEmail": "Email potwierdzony",
-    "monthShort": "mies.",
-    "expensesIncluded": "Opłaty w cenie",
-    "expensesExcluded": "Opłaty osobno",
-    "expensesIncludedLong": "Opłaty są wliczone w czynsz.",
-    "expensesExcludedLong": "Szacowane opłaty dodatkowe:",
-    "favorite": "Dodaj do ulubionych",
-    "offersFound": "znalezionych ofert",
-    "noOffers": "Brak zgodnych ofert",
-    "noOffersHelp": "Opublikuj swoje potrzeby, aby wynajmujący mogli się z Tobą skontaktować.",
-    "publishRequest": "Opublikuj potrzeby",
-    "contactProtected": "Zapytanie zapisane. Kontakty są chronione dla zweryfikowanych użytkowników.",
-    "contactStudent": "Skontaktuj się ze studentem",
-    "profilesFound": "znalezionych profili",
-    "invalidLinkTitle": "Link jest nieprawidłowy lub wygasł",
-    "invalidLinkMessage": "Poproś o nowy link weryfikacyjny i spróbuj ponownie.",
-    "emailConfirmedTitle": "Email potwierdzony",
-    "emailConfirmedPublished": "Wpis został zapisany i czeka na moderację przed publikacją.",
-    "emailConfirmedLogin": "Konto zostało zweryfikowane na tym urządzeniu."
-  }
+  ui: {select:"Wybierz",allCities:"Wszystkie miasta",allZones:"Wszystkie dzielnice",login:"Zaloguj się"}
 };
-
-
-/* StudentBnB 2026-08-23 MAP FIX: direct, stable illustrated map */
-(function(){
-  function applyStableMap(){
-    document.querySelectorAll('.brand small').forEach(function(e){e.textContent='Base & Belong';e.style.fontStyle='italic';});
-    var m=document.querySelector('.country-market-map');
-    if(!m) return;
-    var top=m.querySelector('.market-map-top'); if(top) top.remove();
-    var note=m.querySelector('.market-map-note'); if(note) note.remove();
-    var img=m.querySelector('.market-map-image');
-    if(img){ img.src='assets/img/country-map-illustrated.svg?v=20260823-mapfix2'; img.removeAttribute('srcset'); }
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',applyStableMap); else applyStableMap();
-  window.addEventListener('load',applyStableMap);
-  setTimeout(applyStableMap,0);
-})();
+(function(){const cfg=window.STUDENTBNB_CONFIG,sites=cfg.networkSites;function meta(k,v,c){let e=document.head.querySelector(`meta[${k}="${v}"]`);if(!e){e=document.createElement("meta");e.setAttribute(k,v);document.head.appendChild(e)}e.content=c}function link(r,h,l){let s=`link[rel="${r}"]${l?`[hreflang="${l}"]`:""}`,e=document.head.querySelector(s);if(!e){e=document.createElement("link");e.rel=r;if(l)e.hreflang=l;document.head.appendChild(e)}e.href=h}function apply(){document.querySelectorAll(".brand small").forEach(e=>{e.textContent="Base & Belong";e.style.fontStyle="italic"});const p=location.pathname.endsWith("/")?"":location.pathname.split("/").pop(),u=`https://${cfg.domain}/${p||""}`;link("canonical",u);meta("name","robots","index,follow,max-image-preview:large");meta("property","og:site_name","StudentBnB — Base & Belong");meta("property","og:title",document.title);meta("property","og:url",u);if(!p||p==="index.html"){sites.forEach(s=>link("alternate",s.url,s.code.toLowerCase()));link("alternate","https://studentbnb.eu/","x-default")}const b=document.querySelector(".footer-international .footer-country-links");if(b)b.innerHTML=sites.map(s=>`<a href="${s.url}"${s.code===cfg.countryCode?' aria-current="page"':' target="_blank" rel="noopener"'}><span aria-hidden="true">${s.flag}</span> ${s.label}</a>`).join("")+'<a href="https://studentbnb.eu/" target="_blank" rel="noopener">🇪🇺 Europa</a>';const i=document.querySelector(".footer-international");if(i&&!i.querySelector(".europe-contact")){const x=document.createElement("p");x.className="europe-contact";x.innerHTML='<a href="mailto:contact@studentbnb.eu">contact@studentbnb.eu</a> · <em>Base & Belong</em>';i.appendChild(x)}alignMap()}function alignMap(){const m=document.querySelector(".country-market-map");if(!m)return;m.querySelector(".market-map-top")?.remove();m.querySelector(".market-map-note")?.remove();const img=m.querySelector(".market-map-image");if(img){img.src="assets/img/country-map-illustrated.svg?v=20260823";img.style.display="block";img.style.visibility="visible";img.style.opacity="1"}const st=document.createElement("style");st.textContent='.country-market-map{height:650px!important;min-height:650px!important;background:#f7f4eb!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}.country-market-map:before{display:none!important}.market-map-canvas{height:100%;padding:0!important}.market-map-visual{max-height:none!important;height:100%!important}.market-map-image{display:block!important;visibility:visible!important;opacity:1!important;filter:none!important}.map-city-marker{width:1px!important;height:1px!important;background:transparent!important;border:0!important;box-shadow:none!important}.map-city-marker:after{display:none!important}.map-city-marker span{left:8px!important;background:rgba(255,255,255,.94)!important;border:1px solid rgba(23,23,23,.15)!important;border-radius:9px!important;padding:5px 8px!important;font-size:11px!important;box-shadow:0 3px 10px rgba(0,0,0,.14)!important}.map-city-marker.label-left span{left:auto!important;right:8px!important}.map-city-marker:hover span{background:#ffc400!important}@media(max-width:820px){.country-market-map{height:560px!important;min-height:560px!important}}';document.head.appendChild(st)}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply);else apply()})();
