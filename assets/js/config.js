@@ -1,124 +1,13 @@
-window.STUDENTBNB_CONFIG = {"brandLine":"Base & Belong","countryCode":"PL","countryName":"Polska","locale":"pl-PL","currency":"PLN","domain":"studentbnb.pl","apiBaseUrl":"/api/v1","apiEnabled":false,"analyticsEnabled":false,"routes":{"city":"miasto.html","listing":"ogloszenie.html","publish":"dodaj-ogloszenie.html","request":"szukam.html","students":"studenci.html","solidarity":"mieszkanie-miedzypokoleniowe.html","privacy":"prywatnosc.html","confirm":"potwierdz-email.html"},"networkSites":[{"code":"IT","label":"Italia","flag":"🇮🇹","url":"https://studentbnb.it/"},{"code":"ES","label":"España","flag":"🇪🇸","url":"https://studentbnb.es/"},{"code":"FR","label":"France","flag":"🇫🇷","url":"https://studentbnb.fr/"},{"code":"DE","label":"Deutschland","flag":"🇩🇪","url":"https://student-bnb.de/"},{"code":"PL","label":"Polska","flag":"🇵🇱","url":"https://studentbnb.pl/"}],"ui":{"select":"Wybierz","allCities":"Wszystkie miasta","allZones":"Wszystkie dzielnice","login":"Zaloguj się"}};
-
-(function () {
-  const cfg = window.STUDENTBNB_CONFIG;
-  const sites = cfg.networkSites;
-  const ogImage = `https://${cfg.domain}/assets/img/room-1.webp`;
-
-  function meta(key, value, content) {
-    let element = document.head.querySelector(`meta[${key}="${value}"]`);
-    if (!element) {
-      element = document.createElement("meta");
-      element.setAttribute(key, value);
-      document.head.appendChild(element);
-    }
-    element.content = content;
-  }
-
-  function link(rel, href, hreflang) {
-    const selector = `link[rel="${rel}"]${hreflang ? `[hreflang="${hreflang}"]` : ""}`;
-    let element = document.head.querySelector(selector);
-    if (!element) {
-      element = document.createElement("link");
-      element.rel = rel;
-      if (hreflang) element.hreflang = hreflang;
-      document.head.appendChild(element);
-    }
-    element.href = href;
-  }
-
-  function canonicalUrl() {
-    const page = location.pathname.endsWith("/") ? "" : location.pathname.split("/").pop();
-    const params = new URLSearchParams(location.search);
-    const canonicalParams = new URLSearchParams();
-    if (page === cfg.routes.city && params.get("city")) canonicalParams.set("city", params.get("city"));
-    if (page === cfg.routes.listing && params.get("id")) canonicalParams.set("id", params.get("id"));
-    const query = canonicalParams.toString();
-    return `https://${cfg.domain}/${page || ""}${query ? `?${query}` : ""}`;
-  }
-
-  function updateSeo({title = document.title, description} = {}) {
-    const desc = description || document.head.querySelector('meta[name="description"]')?.content || "Zakwaterowanie studenckie w Polsce.";
-    const canonical = canonicalUrl();
-    link("canonical", canonical);
-    meta("property", "og:title", title);
-    meta("property", "og:description", desc);
-    meta("property", "og:url", canonical);
-    meta("property", "og:image", ogImage);
-    meta("name", "twitter:title", title);
-    meta("name", "twitter:description", desc);
-    meta("name", "twitter:image", ogImage);
-  }
-
-  function addStructuredData() {
-    let script = document.head.querySelector("#studentbnb-website-schema");
-    if (!script) {
-      script = document.createElement("script");
-      script.id = "studentbnb-website-schema";
-      script.type = "application/ld+json";
-      document.head.appendChild(script);
-    }
-    script.textContent = JSON.stringify({"@context":"https://schema.org","@type":"WebSite",name:"StudentBnB",url:`https://${cfg.domain}/`,inLanguage:cfg.locale});
-  }
-
-  function alignMap() {
-    const map = document.querySelector(".country-market-map");
-    if (!map) return;
-    map.querySelector(".market-map-top")?.remove();
-    map.querySelector(".market-map-note")?.remove();
-    const image = map.querySelector(".market-map-image");
-    if (image) {
-      image.src = "assets/img/country-map-watercolor-v2.webp?v=20260824-map2";
-      image.removeAttribute("srcset");
-      image.style.display = "block";
-      image.style.visibility = "visible";
-      image.style.opacity = "1";
-    }
-    const visual = map.querySelector(".market-map-visual");
-    if (visual) visual.style.setProperty("--map-ratio", "1024 / 1260");
-    if (!map.querySelector(".demo-map-notice")) {
-      const notice = document.createElement("p");
-      notice.className = "demo-map-notice";
-      notice.textContent = "Wersja demonstracyjna: widoczne ogłoszenia i profile są przykładami.";
-      map.appendChild(notice);
-    }
-  }
-
-  function apply() {
-    document.querySelectorAll(".brand small").forEach(element => {
-      element.textContent = "Base & Belong";
-      element.style.fontStyle = "italic";
-    });
-    meta("name", "robots", "index,follow,max-image-preview:large");
-    meta("property", "og:site_name", "StudentBnB — Base & Belong");
-    meta("property", "og:type", "website");
-    meta("name", "twitter:card", "summary_large_image");
-    updateSeo();
-    addStructuredData();
-
-    const page = location.pathname.endsWith("/") ? "" : location.pathname.split("/").pop();
-    if (!page || page === "index.html") {
-      sites.forEach(site => link("alternate", site.url, site.code.toLowerCase()));
-    }
-
-    const box = document.querySelector(".footer-international .footer-country-links");
-    if (box) {
-      box.innerHTML = sites.map(site =>
-        `<a href="${site.url}"${site.code === cfg.countryCode ? ' aria-current="page"' : ' target="_blank" rel="noopener"'}><span aria-hidden="true">${site.flag}</span> ${site.label}</a>`
-      ).join("");
-    }
-    alignMap();
-  }
-
-  window.StudentBnBSEO = { update: updateSeo };
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", apply);
-  else apply();
-})();
-(function () {
-  if (document.querySelector("script[data-studentbnb-analytics]")) return;
-  const script = document.createElement("script");
-  script.src = "assets/js/analytics.js?v=20260824";
-  script.defer = true;
-  script.dataset.studentbnbAnalytics = "1";
-  document.head.appendChild(script);
-})();
+window.STUDENTBNB_CONFIG={brandLine:"Base & Belong",countryCode:"PL",countryName:"Polska",locale:"pl-PL",currency:"PLN",domain:"studentbnb.pl",apiBaseUrl:"/api/v1",apiEnabled:false,analyticsEnabled:false,routes:{city:"miasto.html",listing:"ogloszenie.html",publish:"dodaj-ogloszenie.html",request:"szukam.html",students:"studenci.html",solidarity:"mieszkanie-miedzypokoleniowe.html",privacy:"prywatnosc.html",confirm:"potwierdz-email.html"},networkSites:[{code:"IT",label:"Italia",flag:"🇮🇹",url:"https://studentbnb.it/"},{code:"ES",label:"España",flag:"🇪🇸",url:"https://studentbnb.es/"},{code:"FR",label:"France",flag:"🇫🇷",url:"https://studentbnb.fr/"},{code:"DE",label:"Deutschland",flag:"🇩🇪",url:"https://student-bnb.de/"},{code:"PL",label:"Polska",flag:"🇵🇱",url:"https://studentbnb.pl/"}],ui:{select:"Wybierz",allCities:"Wszystkie miasta",allZones:"Wszystkie dzielnice",login:"Zaloguj się"}};
+(function(){
+const cfg=window.STUDENTBNB_CONFIG,sites=cfg.networkSites,ogImage=`https://${cfg.domain}/assets/img/country-map-watercolor-v2.webp`;
+function meta(k,v,c){let e=document.head.querySelector(`meta[${k}="${v}"]`);if(!e){e=document.createElement("meta");e.setAttribute(k,v);document.head.appendChild(e)}e.content=c}
+function link(r,h,l){let s=`link[rel="${r}"]${l?`[hreflang="${l}"]`:""}`,e=document.head.querySelector(s);if(!e){e=document.createElement("link");e.rel=r;if(l)e.hreflang=l;document.head.appendChild(e)}e.href=h}
+function canonicalUrl(){const p=location.pathname.endsWith("/")?"":location.pathname.split("/").pop(),q=new URLSearchParams(location.search),c=new URLSearchParams();if(p===cfg.routes.city&&q.get("city"))c.set("city",q.get("city"));if(p===cfg.routes.listing&&q.get("id"))c.set("id",q.get("id"));return `https://${cfg.domain}/${p||""}${c.toString()?`?${c}`:""}`}
+function updateSeo({title=document.title,description}={}){const d=description||document.head.querySelector('meta[name="description"]')?.content||"Zakwaterowanie studenckie w Polsce.",u=canonicalUrl();link("canonical",u);meta("property","og:title",title);meta("property","og:description",d);meta("property","og:url",u);meta("property","og:image",ogImage);meta("name","twitter:title",title);meta("name","twitter:description",d);meta("name","twitter:image",ogImage)}
+function addStructuredData(){let s=document.head.querySelector("#studentbnb-website-schema");if(!s){s=document.createElement("script");s.id="studentbnb-website-schema";s.type="application/ld+json";document.head.appendChild(s)}s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"WebSite",name:"StudentBnB",url:`https://${cfg.domain}/`,inLanguage:cfg.locale})}
+function alignMap(){const m=document.querySelector(".country-market-map");if(!m)return;m.querySelector(".market-map-top")?.remove();m.querySelector(".market-map-note")?.remove();const img=m.querySelector(".market-map-image"),v=m.querySelector(".market-map-visual");if(img){img.src="assets/img/country-map-watercolor-v2.webp?v=20260824-mobilecenter1";img.removeAttribute("srcset");img.style.display="block";img.style.visibility="visible";img.style.opacity="1"}if(v)v.style.setProperty("--map-ratio","1024 / 1260");if(!m.querySelector(".demo-map-notice")){const n=document.createElement("p");n.className="demo-map-notice";n.textContent="Wersja demonstracyjna: widoczne ogłoszenia i profile są przykładami.";m.appendChild(n)}
+if(!document.getElementById("studentbnb-map-center-fix")){const st=document.createElement("style");st.id="studentbnb-map-center-fix";st.textContent=`.market-map-canvas{display:flex!important;align-items:center!important;justify-content:center!important;overflow:visible!important}.market-map-visual{margin-left:auto!important;margin-right:auto!important;transform:none!important}.market-map-image{object-position:50% 50%!important;margin:0 auto!important}@media(max-width:820px){.country-market-map{height:auto!important;min-height:0!important;padding:12px 8px 72px!important;overflow:hidden!important}.market-map-canvas{width:100%!important;height:auto!important;min-height:0!important;padding:0!important}.market-map-visual{width:min(100%,460px)!important;height:auto!important;max-width:100%!important;max-height:none!important;aspect-ratio:1024/1260!important;flex:0 0 auto!important;margin:0 auto!important}.market-map-image{width:100%!important;height:auto!important;aspect-ratio:1024/1260!important;object-fit:contain!important;object-position:center center!important}.demo-map-notice{left:10px!important;right:10px!important;bottom:10px!important}}@media(max-width:480px){.market-map-visual{width:100%!important}.country-market-map{padding-left:4px!important;padding-right:4px!important}}`;document.head.appendChild(st)}}
+function apply(){document.querySelectorAll(".brand small").forEach(e=>{e.textContent="Base & Belong";e.style.fontStyle="italic"});meta("name","robots","index,follow,max-image-preview:large");meta("property","og:site_name","StudentBnB — Base & Belong");meta("property","og:type","website");meta("name","twitter:card","summary_large_image");updateSeo();addStructuredData();const p=location.pathname.endsWith("/")?"":location.pathname.split("/").pop();if(!p||p==="index.html")sites.forEach(s=>link("alternate",s.url,s.code.toLowerCase()));const b=document.querySelector(".footer-international .footer-country-links");if(b)b.innerHTML=sites.map(s=>`<a href="${s.url}"${s.code===cfg.countryCode?' aria-current="page"':' target="_blank" rel="noopener"'}><span aria-hidden="true">${s.flag}</span> ${s.label}</a>`).join("");alignMap()}
+window.StudentBnBSEO={update:updateSeo};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply);else apply()})();
+(function(){if(document.querySelector("script[data-studentbnb-analytics]"))return;const s=document.createElement("script");s.src="assets/js/analytics.js?v=20260824";s.defer=true;s.dataset.studentbnbAnalytics="1";document.head.appendChild(s)})();
