@@ -68,12 +68,14 @@ window.STUDENTBNB_CONFIG = {"brandLine":"Base & Belong","countryCode":"PL","coun
     map.querySelector(".market-map-note")?.remove();
     const image = map.querySelector(".market-map-image");
     if (image) {
-      image.src = "assets/img/country-map-illustrated.svg";
+      image.src = "assets/img/country-map-watercolor-v2.webp?v=20260824-map2";
       image.removeAttribute("srcset");
       image.style.display = "block";
       image.style.visibility = "visible";
       image.style.opacity = "1";
     }
+    const visual = map.querySelector(".market-map-visual");
+    if (visual) visual.style.setProperty("--map-ratio", "1024 / 1260");
     if (!map.querySelector(".demo-map-notice")) {
       const notice = document.createElement("p");
       notice.className = "demo-map-notice";
