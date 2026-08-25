@@ -1,4 +1,4 @@
-/* StudentBnB country-pack additions. Shared visual language with Italy / Spain / France. */
+/* StudentBnB Poland — aligned with Italy / Spain / France. */
 .country-market-map{position:relative;width:100%;max-width:none;height:auto;min-height:0;margin-top:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible;display:flex;flex-direction:column;isolation:auto}
 .country-market-map:before{display:none}
 .market-map-top,.market-map-canvas,.market-map-note{position:relative;z-index:2}
@@ -10,14 +10,21 @@
 .market-map-visual{position:relative;width:100%;height:auto;max-width:720px;max-height:none;aspect-ratio:var(--map-ratio);margin-inline:auto;overflow:visible;background:#fff;isolation:isolate}
 .market-map-image{display:block;width:100%!important;height:100%!important;min-height:0!important;object-fit:contain!important;object-position:center!important;filter:none!important;user-select:none}
 .market-map-visual:after{content:"";position:absolute;inset:-3px;z-index:4;pointer-events:none;background:linear-gradient(to right,#fff 0,rgba(255,255,255,.94) 2%,transparent 9%,transparent 91%,rgba(255,255,255,.94) 98%,#fff 100%),linear-gradient(to bottom,#fff 0,rgba(255,255,255,.92) 2%,transparent 7%,transparent 93%,rgba(255,255,255,.92) 98%,#fff 100%)}
-/* Cities stay available in the dropdown; remove yellow dots from the map itself. */
 .map-city-marker{display:none!important}
 .market-map-note{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#171717;color:#fff;padding:18px 20px;border-radius:16px}
 .market-map-note strong{font-size:15px}.market-map-note span{color:#c8cbd0;font-size:13px}
-.demo-map-notice{position:absolute;left:18px;right:18px;bottom:16px;z-index:8;margin:0;padding:10px 13px;border:1px solid rgba(23,23,23,.18);border-radius:10px;background:rgba(255,255,255,.94);box-shadow:0 5px 18px rgba(0,0,0,.12);font-size:12px;font-weight:800;line-height:1.35;text-align:center}
+.city-card{position:relative;overflow:hidden;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+.city-card img{opacity:0!important}
 .city-card strong{position:absolute!important;width:auto!important;height:auto!important;overflow:visible!important;clip:auto!important;white-space:normal!important;left:12px;right:12px;bottom:12px;color:#fff;font-size:16px;line-height:1.1;text-shadow:0 2px 8px rgba(0,0,0,.72);z-index:2}
 .city-card:before{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.78));z-index:1}
-.city-card img{filter:saturate(.82);transition:.25s transform}.city-card:hover img{transform:scale(1.04)}
+.city-grid .city-card:nth-child(1){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Warsaw%20Old%20Town%20Market%20Square%2010.JPG")}
+.city-grid .city-card:nth-child(2){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Sukiennice%20and%20Main%20Market%20Square%20Krakow%20Poland.JPG")}
+.city-grid .city-card:nth-child(3){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Wroclaw-Rynek-7.2005.jpg")}
+.city-grid .city-card:nth-child(4){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Calle%20Dlugie%20Pobrzeze%2C%20Gdansk%2C%20Polonia%2C%202013-05-20%2C%20DD%2006.jpg")}
+.city-grid .city-card:nth-child(5){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Pozna%C5%84-Old%20Market%20Square.jpg")}
+.city-grid .city-card:nth-child(6){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Ulica%20Piotrkowska%20in%20Lodz.JPG")}
+.city-grid .city-card:nth-child(7){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Lublin%20PanoramaStaregoMiasta.JPG")}
+.city-grid .city-card:nth-child(8){background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Katowice-Spodek%20%288%29.jpg")}
 .network-placeholder{opacity:.52;cursor:not-allowed}.network-placeholder:hover,.network-placeholder:focus{background:transparent!important;border-color:#51545a!important;color:#fff!important}
 .verification-panel{margin-top:18px;padding:18px;border-radius:13px;background:#eef7ff;border:1px solid #b9daf1;display:none}.verification-panel.active{display:block}.verification-panel h3{margin:0 0 6px;font-size:18px}.verification-panel p{margin:0 0 12px;color:#3e5262}.verification-panel .btn{padding:10px 15px;font-size:13px}
 .legal-draft{background:#fff4dc;border:1px solid #efd08b;border-radius:14px;padding:16px 18px;margin:0 0 24px;color:#5c4715}.legal-draft strong{display:block;margin-bottom:3px}.legal-content{padding:42px 0 64px;background:#fafbfc}.legal-card{max-width:920px;margin:auto;padding:30px}.legal-card h1{font-size:40px;margin:0 0 12px}.legal-card h2{font-size:22px;margin:28px 0 8px}.legal-card p,.legal-card li{color:#40474e}.legal-card code{background:#f1f3f5;border-radius:6px;padding:2px 6px}
