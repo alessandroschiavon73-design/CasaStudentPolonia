@@ -78,3 +78,14 @@
 @media(max-width:1050px){.map-city-marker span{font-size:9px;padding:4px 6px}}
 @media(max-width:820px){.map-city-marker span{font-size:8px;padding:5px 7px;left:6px}.map-city-marker.label-left span{left:auto;right:6px}}
 @media(max-width:520px){.map-city-marker span{font-size:8px;padding:6px 8px;max-width:88px;overflow:hidden;text-overflow:ellipsis;left:5px}.map-city-marker.label-left span{left:auto;right:5px}}
+
+/* City imagery: the photo is rendered by the image element, not twice as a card background. */
+.city-grid .city-card{
+  background-image:none!important;
+}
+.city-grid .city-card>img{
+  opacity:1!important;
+}
+.city-grid .city-card:before{
+  display:none!important;
+}
