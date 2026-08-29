@@ -78,9 +78,22 @@
     hero.dataset.csRepresentativePhoto = "ready";
   }
 
+  function applyCuratedHero() {
+    const hero = document.querySelector(".city-hero");
+    if (!hero) return;
+    const slug = new URLSearchParams(location.search).get("city");
+    const cities = window.STUDENTBNB_DATA?.cities || window.STUDENTBNB_CITIES || [];
+    const city = cities.find((item) => [item.slug, item.id, item.key].includes(slug));
+    if (!city?.image) return;
+    const background = hero.querySelector(".city-hero-bg");
+    if (background) background.style.backgroundImage = `url("${city.image}")`;
+    else hero.style.backgroundImage = `url("${city.image}")`;
+    hero.dataset.csRepresentativePhoto = "curated";
+  }
+
   function run() {
     document.querySelectorAll(".city-card, #city-cards a[href], .country-column a[href*='city=']").forEach(enhanceCard);
-    enhanceHero();
+    applyCuratedHero();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);

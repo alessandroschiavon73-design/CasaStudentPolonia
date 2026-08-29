@@ -7,7 +7,7 @@ window.STUDENTBNB_DATA = {
       "name": "Warszawa",
       "region": "Mazowieckie",
       "description": "Warszawa: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-1.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Warsaw%20Old%20Town%20Market%20Square%2010.JPG",
       "active": true,
       "districts": [
         {
@@ -2244,7 +2244,7 @@ window.STUDENTBNB_DATA = {
       "name": "Kraków",
       "region": "Małopolskie",
       "description": "Kraków: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-2.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sukiennice%20and%20Main%20Market%20Square%20Krakow%20Poland.JPG",
       "active": true,
       "districts": [
         {
@@ -3796,7 +3796,7 @@ window.STUDENTBNB_DATA = {
       "name": "Wrocław",
       "region": "Dolnośląskie",
       "description": "Wrocław: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-3.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wroclaw-Rynek-7.2005.jpg",
       "active": true,
       "districts": [
         {
@@ -4428,7 +4428,7 @@ window.STUDENTBNB_DATA = {
       "name": "Gdańsk",
       "region": "Pomorskie",
       "description": "Gdańsk: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-4.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Calle%20Dlugie%20Pobrzeze%2C%20Gdansk%2C%20Polonia%2C%202013-05-20%2C%20DD%2006.jpg",
       "active": true,
       "districts": [
         {
@@ -5545,7 +5545,7 @@ window.STUDENTBNB_DATA = {
       "name": "Poznań",
       "region": "Wielkopolskie",
       "description": "Poznań: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-5.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pozna%C5%84-Old%20Market%20Square.jpg",
       "active": true,
       "districts": [
         {
@@ -6627,7 +6627,7 @@ window.STUDENTBNB_DATA = {
       "name": "Łódź",
       "region": "Łódzkie",
       "description": "Łódź: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-6.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ulica%20Piotrkowska%20in%20Lodz.JPG",
       "active": true,
       "districts": [
         {
@@ -7599,7 +7599,7 @@ window.STUDENTBNB_DATA = {
       "name": "Lublin",
       "region": "Lubelskie",
       "description": "Lublin: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-7.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lublin%20PanoramaStaregoMiasta.JPG",
       "active": true,
       "districts": [
         {
@@ -8041,7 +8041,7 @@ window.STUDENTBNB_DATA = {
       "name": "Katowice",
       "region": "Śląskie",
       "description": "Katowice: Czynsz, opłaty, kaucja, okres i wypowiedzenie.",
-      "image": "assets/img/room-1.webp",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Katowice-Spodek%20%288%29.jpg",
       "active": true,
       "districts": [
         {
