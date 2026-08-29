@@ -71,8 +71,10 @@
       return;
     }
     const background = hero.querySelector(".city-hero-bg");
-    if (background) background.style.backgroundImage = `url("${source}")`;
-    else hero.style.backgroundImage = `url("${source}")`;
+    requestAnimationFrame(() => {
+      if (background) background.style.backgroundImage = `url("${source}")`;
+      else hero.style.backgroundImage = `url("${source}")`;
+    });
     hero.dataset.csRepresentativePhoto = "ready";
   }
 
@@ -86,4 +88,3 @@
   setTimeout(run, 700);
   new MutationObserver(() => requestAnimationFrame(run)).observe(document.documentElement, { childList: true, subtree: true });
 })();
-
