@@ -110,6 +110,10 @@ window.StudentBnBSEO={update:updateSeo};if(document.readyState==="loading")docum
     renderDualFooter();
   }
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", applyPortalNavigation);
-  else applyPortalNavigation();
+  function applyAfterBranding() {
+    window.setTimeout(applyPortalNavigation, 0);
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", applyAfterBranding);
+  else applyAfterBranding();
 })();
